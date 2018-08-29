@@ -108,24 +108,25 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="1.BF算法&amp;emsp;&amp;emsp;从主串的查找起始位置pos开始，匹配查找。步骤：&amp;emsp;i，j代表主串S和子串T中当前正待比较的字符位置，i的初值为pos，j为1.&amp;emsp;如果两个串均未比较到串尾，即i&amp;lt;=S.length &amp;amp;&amp;amp; j&amp;lt;=T.length时，循环执行如下操作：&amp;emsp;&amp;emsp;如果S[i]==T[j],则i和j分别后移一个位置，继续比较下">
+<meta name="keywords" content="ACM模板">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://edwinkc.github.io/2018/08/25/hello-world/index.html">
+<meta property="og:title" content="模式匹配">
+<meta property="og:url" content="https://edwinkc.github.io/2018/08/29/模式匹配/index.html">
 <meta property="og:site_name" content="Zhao Pengfei&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="1.BF算法&amp;emsp;&amp;emsp;从主串的查找起始位置pos开始，匹配查找。步骤：&amp;emsp;i，j代表主串S和子串T中当前正待比较的字符位置，i的初值为pos，j为1.&amp;emsp;如果两个串均未比较到串尾，即i&amp;lt;=S.length &amp;amp;&amp;amp; j&amp;lt;=T.length时，循环执行如下操作：&amp;emsp;&amp;emsp;如果S[i]==T[j],则i和j分别后移一个位置，继续比较下">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-25T06:37:44.361Z">
+<meta property="og:updated_time" content="2018-08-29T03:12:29.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="模式匹配">
+<meta name="twitter:description" content="1.BF算法&amp;emsp;&amp;emsp;从主串的查找起始位置pos开始，匹配查找。步骤：&amp;emsp;i，j代表主串S和子串T中当前正待比较的字符位置，i的初值为pos，j为1.&amp;emsp;如果两个串均未比较到串尾，即i&amp;lt;=S.length &amp;amp;&amp;amp; j&amp;lt;=T.length时，循环执行如下操作：&amp;emsp;&amp;emsp;如果S[i]==T[j],则i和j分别后移一个位置，继续比较下">
 
 
 
 
 
 
-  <link rel="canonical" href="https://edwinkc.github.io/2018/08/25/hello-world/"/>
+  <link rel="canonical" href="https://edwinkc.github.io/2018/08/29/模式匹配/"/>
 
 
 
@@ -135,7 +136,7 @@
   };
 </script>
 
-  <title>Hello World | Zhao Pengfei's Blog</title>
+  <title>模式匹配 | Zhao Pengfei's Blog</title>
   
 
 
@@ -316,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://edwinkc.github.io/2018/08/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://edwinkc.github.io/2018/08/29/模式匹配/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="赵鹏飞">
@@ -333,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">模式匹配
               
             
           </h1>
@@ -358,9 +359,13 @@
                 
               
 
-              <time title="创建时间：2018-08-25 14:37:44" itemprop="dateCreated datePublished" datetime="2018-08-25T14:37:44+08:00">2018-08-25</time>
+              <time title="创建时间：2018-08-29 10:46:06 / 修改时间：11:12:29" itemprop="dateCreated datePublished" datetime="2018-08-29T10:46:06+08:00">2018-08-29</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -392,15 +397,10 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>1.BF算法<br>&emsp;&emsp;从主串的查找起始位置pos开始，匹配查找。<br>步骤：<br>&emsp;i，j代表主串S和子串T中当前正待比较的字符位置，i的初值为pos，j为1.<br>&emsp;如果两个串均未比较到串尾，即i&lt;=S.length &amp;&amp; j&lt;=T.length时，循环执行如下操作：<br>&emsp;&emsp;如果S[i]==T[j],则i和j分别后移一个位置，继续比较下一个字符；<br>&emsp;&emsp;反之，指针回溯，从主串的下一个字符(i=i-j+2)开始和模式的第一个字符j=1比较<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Index_BF</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> *t, <span class="keyword">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=pos, j=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> s_len=<span class="built_in">strlen</span>(s+<span class="number">1</span>), t_len=<span class="built_in">strlen</span>(t+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">while</span>(i&lt;=s_len&amp;&amp;j&lt;=t_len)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]==t[j])</span><br><span class="line">		&#123;</span><br><span class="line">			++i;++j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			i=i-j+<span class="number">2</span>;</span><br><span class="line">			j=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(j&gt;t_len)	<span class="keyword">return</span> i-t_len;</span><br><span class="line">	<span class="keyword">else</span>	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>时间复杂度：最坏的情况下平均为O(n*m)。</p>
+<hr>
+<p>2.KMP算法<br>&emsp;&emsp;此算法可以在O(n+m)的时间数量级上完成串匹配。与BF的失配回溯不同，每次向右滑动尽可能多的距离。<br>&emsp;当匹配过程中产生失配时，i不变，j退回到next[j]的位置上重新比较，并且当j退至0时，i和j需同时++。即若主串 的第i个字符和模式的第1个字符不等，应从主串的第i+1个字符开始重新匹配。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Index_KMP</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> *t, <span class="keyword">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=pos, j=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> s_len=<span class="built_in">strlen</span>(s+<span class="number">1</span>), t_len=<span class="built_in">strlen</span>(t+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">while</span>(i&lt;=s_len&amp;&amp;j&lt;=t_len)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">0</span>||s[i]==t[j])</span><br><span class="line">		&#123;</span><br><span class="line">			++i;++j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>	j=next[j];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(j&gt;t_len)	<span class="keyword">return</span> i-t_len;</span><br><span class="line">	<span class="keyword">else</span>	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_next</span><span class="params">(<span class="keyword">char</span> *t, <span class="keyword">int</span> next[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>, j=<span class="number">0</span>, t_len=<span class="built_in">strlen</span>(t+<span class="number">1</span>);</span><br><span class="line">	next[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;t_len)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">0</span>||t[i]==t[j])</span><br><span class="line">		&#123;</span><br><span class="line">			++i;++j;next[i]=j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>	j=next[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//修正版</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_nextval</span><span class="params">(<span class="keyword">char</span> *t, <span class="keyword">int</span> nextval[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>, j=<span class="number">0</span>, t_len=<span class="built_in">strlen</span>(t+<span class="number">1</span>);</span><br><span class="line">	nextval[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;t_len)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">0</span>||t[i]==t[j])</span><br><span class="line">		&#123;</span><br><span class="line">			++i;++j;</span><br><span class="line">			<span class="keyword">if</span>(t[i]!=t[j])	nextval[i]=j;</span><br><span class="line">			<span class="keyword">else</span>	nextval[i]=nextval[j];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>	j=next[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -419,6 +419,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/ACM模板/" rel="tag"># ACM模板</a>
+          
+        </div>
+      
 
       
       
@@ -428,15 +434,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/27/快速幂-取模/" rel="next" title="快速幂/取模">
+                <i class="fa fa-chevron-left"></i> 快速幂/取模
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/25/并查集（路径压缩）/" rel="prev" title="并查集（路径压缩）">
-                并查集（路径压缩） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -481,17 +487,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -567,22 +564,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

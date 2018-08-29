@@ -108,13 +108,16 @@
 
 
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="因为我们都来自不同的世界，所以才组成了现在的这个世界。">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Zhao Pengfei&#39;s Blog">
 <meta property="og:url" content="https://edwinkc.github.io/index.html">
 <meta property="og:site_name" content="Zhao Pengfei&#39;s Blog">
+<meta property="og:description" content="因为我们都来自不同的世界，所以才组成了现在的这个世界。">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zhao Pengfei&#39;s Blog">
+<meta name="twitter:description" content="因为我们都来自不同的世界，所以才组成了现在的这个世界。">
 
 
 
@@ -313,11 +316,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://edwinkc.github.io/2018/08/29/模式匹配/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="赵鹏飞">
+      <meta itemprop="description" content="因为我们都来自不同的世界，所以才组成了现在的这个世界。">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zhao Pengfei's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/29/模式匹配/" itemprop="url">
+                  模式匹配
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-29 10:46:06 / 修改时间：11:12:29" itemprop="dateCreated datePublished" datetime="2018-08-29T10:46:06+08:00">2018-08-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.BF算法<br>&emsp;&emsp;从主串的查找起始位置pos开始，匹配查找。<br>步骤：<br>&emsp;i，j代表主串S和子串T中当前正待比较的字符位置，i的初值为pos，j为1.<br>&emsp;如果两个串均未比较到串尾，即i&lt;=S.length &amp;&amp; j&lt;=T.length时，循环执行如下操作：<br>&emsp;&emsp;如果S[i]==T[j],则i和j分别后移一个位置，继续比较下一个字符；<br>&emsp;&emsp;反之，指针回溯，从主串的下一个字符(i=i-j+2)开始和模式的第一个字符j=1比较<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Index_BF</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> *t, <span class="keyword">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=pos, j=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> s_len=<span class="built_in">strlen</span>(s+<span class="number">1</span>), t_len=<span class="built_in">strlen</span>(t+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">while</span>(i&lt;=s_len&amp;&amp;j&lt;=t_len)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]==t[j])</span><br><span class="line">		&#123;</span><br><span class="line">			++i;++j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			i=i-j+<span class="number">2</span>;</span><br><span class="line">			j=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(j&gt;t_len)	<span class="keyword">return</span> i-t_len;</span><br><span class="line">	<span class="keyword">else</span>	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>时间复杂度：最坏的情况下平均为O(n*m)。</p>
+<hr>
+<p>2.KMP算法<br>&emsp;&emsp;此算法可以在O(n+m)的时间数量级上完成串匹配。与BF的失配回溯不同，每次向右滑动尽可能多的距离。<br>&emsp;当匹配过程中产生失配时，i不变，j退回到next[j]的位置上重新比较，并且当j退至0时，i和j需同时++。即若主串 的第i个字符和模式的第1个字符不等，应从主串的第i+1个字符开始重新匹配。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Index_KMP</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> *t, <span class="keyword">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=pos, j=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> s_len=<span class="built_in">strlen</span>(s+<span class="number">1</span>), t_len=<span class="built_in">strlen</span>(t+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">while</span>(i&lt;=s_len&amp;&amp;j&lt;=t_len)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">0</span>||s[i]==t[j])</span><br><span class="line">		&#123;</span><br><span class="line">			++i;++j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>	j=next[j];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(j&gt;t_len)	<span class="keyword">return</span> i-t_len;</span><br><span class="line">	<span class="keyword">else</span>	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_next</span><span class="params">(<span class="keyword">char</span> *t, <span class="keyword">int</span> next[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>, j=<span class="number">0</span>, t_len=<span class="built_in">strlen</span>(t+<span class="number">1</span>);</span><br><span class="line">	next[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;t_len)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">0</span>||t[i]==t[j])</span><br><span class="line">		&#123;</span><br><span class="line">			++i;++j;next[i]=j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>	j=next[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//修正版</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_nextval</span><span class="params">(<span class="keyword">char</span> *t, <span class="keyword">int</span> nextval[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>, j=<span class="number">0</span>, t_len=<span class="built_in">strlen</span>(t+<span class="number">1</span>);</span><br><span class="line">	nextval[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;t_len)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">0</span>||t[i]==t[j])</span><br><span class="line">		&#123;</span><br><span class="line">			++i;++j;</span><br><span class="line">			<span class="keyword">if</span>(t[i]!=t[j])	nextval[i]=j;</span><br><span class="line">			<span class="keyword">else</span>	nextval[i]=nextval[j];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>	j=next[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://edwinkc.github.io/2018/08/27/快速幂-取模/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhao Pengfei">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="赵鹏飞">
+      <meta itemprop="description" content="因为我们都来自不同的世界，所以才组成了现在的这个世界。">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -458,8 +604,8 @@
     <link itemprop="mainEntityOfPage" href="https://edwinkc.github.io/2018/08/25/gcd-最大公约数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhao Pengfei">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="赵鹏飞">
+      <meta itemprop="description" content="因为我们都来自不同的世界，所以才组成了现在的这个世界。">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -600,8 +746,8 @@
     <link itemprop="mainEntityOfPage" href="https://edwinkc.github.io/2018/08/25/并查集（路径压缩）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhao Pengfei">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="赵鹏飞">
+      <meta itemprop="description" content="因为我们都来自不同的世界，所以才组成了现在的这个世界。">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -745,8 +891,8 @@
     <link itemprop="mainEntityOfPage" href="https://edwinkc.github.io/2018/08/25/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhao Pengfei">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="赵鹏飞">
+      <meta itemprop="description" content="因为我们都来自不同的世界，所以才组成了现在的这个世界。">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -905,10 +1051,10 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/avatar.png"
-                alt="Zhao Pengfei" />
+                alt="赵鹏飞" />
             
-              <p class="site-author-name" itemprop="name">Zhao Pengfei</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-author-name" itemprop="name">赵鹏飞</p>
+              <p class="site-description motion-element" itemprop="description">因为我们都来自不同的世界，所以才组成了现在的这个世界。</p>
           </div>
 
           
@@ -918,7 +1064,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -993,7 +1139,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Zhao Pengfei</span>
+  <span class="author" itemprop="copyrightHolder">赵鹏飞</span>
 
   
 
